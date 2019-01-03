@@ -14,4 +14,16 @@ export class PlayersService {
   getPlayers(subpath) {
     return this.http.get(this.baseUrl + subpath);
   }
+
+  addPlayer(player, subpath, id) {
+    return this.http.post(this.baseUrl + subpath, player, {
+      params: {
+        teamId: id
+      }
+    })
+  }
+
+  getTeams(subpath) {
+    return this.http.get(this.baseUrl + subpath);
+  }
 }

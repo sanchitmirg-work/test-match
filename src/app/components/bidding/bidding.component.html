@@ -38,32 +38,61 @@
                         <td>{{selectedPlayer?.project}}</td>
                     </tr>
                 </table>
-                <!-- <table class="inline-block table-padding">
-                    <tr>
-                        <th>Contract Id:</th>
-                        <td>{{CID}}</td>
-                    </tr>
-                </table>
-                <table class="inline-block table-padding">
-                    <tr>
-                        <th>Contract Id:</th>
-                        <td>{{CID}}</td>
-                    </tr>
-                </table> -->
                 <div class="form-group">
                     <label for="usr">Points:</label>
-                    <input type="number" class="form-control" id="usr">
+                    <input type="number" name="price" [(ngModel)]="selectedPlayer.price" class="form-control" id="usr">
                 </div>
                 <div>
                     <p-dropdown [options]="teams" name="teamselection" [appendTo]="'body'" [(ngModel)]="selectedTeam" [placeholder]="'Select Team'"></p-dropdown>
                 </div>
+                <p-button label="Save" (click)="assignPlayerToTeam()"></p-button>
                 <div style="margin-top: 10px;">
-                    <button type="button" class="btn btn-success">Success</button>
+                    <!-- <button type="button" class="btn btn-success" (onclick)="assignPlayerToTeam()">Success</button> -->
+
                 </div>
             </p-card>
         </div>
     </div>
-    <div class="bidding-bottom-section">
-
-    </div>
+    <!-- <div class="bidding-bottom-section">
+        <div class="ui-g-3">
+            <ng-template let-royal let-last="last" ngFor [ngForOf]="royals" let-i="index">
+                <div class="ui-g-12 list">
+                    <div class="ui-g-3"></div>
+                    <div class="ui-g-3"></div>
+                    <div class="ui-g-3"></div>
+                    <div class="ui-g-3"></div>
+                </div>
+            </ng-template>
+        </div>
+        <div class="ui-g-3">
+            <ng-template let-royal let-last="last" ngFor [ngForOf]="royals" let-i="index">
+                <div class="ui-g-12 list">
+                    <div class="ui-g-3"></div>
+                    <div class="ui-g-3"></div>
+                    <div class="ui-g-3"></div>
+                    <div class="ui-g-3"></div>
+                </div>
+            </ng-template>
+        </div>
+        <div class="ui-g-3">
+            <ng-template let-royal let-last="last" ngFor [ngForOf]="royals" let-i="index">
+                <div class="ui-g-12 list">
+                    <div class="ui-g-3"></div>
+                    <div class="ui-g-3"></div>
+                    <div class="ui-g-3"></div>
+                    <div class="ui-g-3"></div>
+                </div>
+            </ng-template>
+        </div>
+        <div class="ui-g-3">
+            <ng-template let-royal let-last="last" ngFor [ngForOf]="royals" let-i="index">
+                <div class="ui-g-12 list">
+                    <div class="ui-g-3"></div>
+                    <div class="ui-g-3"></div>
+                    <div class="ui-g-3"></div>
+                    <div class="ui-g-3"></div>
+                </div>
+            </ng-template>
+        </div>
+    </div> -->
 </div>
