@@ -55,11 +55,9 @@ export class BiddingComponent implements OnInit {
   }
 
   assignPlayerToTeam() {
-    console.log("inside button click")
     this.service.addPlayer(this.selectedPlayer, 'members/addMember', this.selectedTeam)
       .subscribe((response) => {
         if (response) {
-          console.log("response on adding member", response)
         }
       })
   }

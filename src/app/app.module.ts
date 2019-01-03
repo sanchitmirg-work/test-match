@@ -9,6 +9,8 @@ import { CalendarModule, PanelModule, OrderListModule, CardModule, DropdownModul
 import { DataViewModule } from 'primeng/dataview';
 import { MainComponent } from './main/main.component';
 import { AlertModule } from 'ngx-bootstrap';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
 import { PlayersComponent } from './components/players/players.component';
 import { BiddingComponent } from './components/bidding/bidding.component';
 
@@ -26,6 +28,7 @@ import { BiddingComponent } from './components/bidding/bidding.component';
     AppRoutingModule,
     FormsModule,
     CalendarModule,
+    AngularFireModule.initializeApp(environment.firebase),
     DataViewModule,
     PanelModule,
     OrderListModule,

@@ -1,7 +1,7 @@
 <div class="header">
     <div class="bidding-top-section">
         <!-- [listStyle]="{'height':'250px', 'width':'100px'}" -->
-        <div class="ui-g-6">
+        <div class="ui-g-6" style="height: 6vh;">
             <p-orderList [value]="players" [styleClass]="'bidding-list'" header="Players" filter="filter" filterBy="id" filterPlaceholder="Filter by Id"
                 dragdrop="true" dragdropScope="cars">
                 <ng-template let-player pTemplate="item">
@@ -12,48 +12,58 @@
                 </ng-template>
             </p-orderList>
         </div>
-        <div *ngIf="selectedPlayer.id" class="ui-g-6">
+        <div *ngIf="selectedPlayer.id" class="ui-g-6" style="height: 6vh;">
             <p-card>
-                <p-header>
-                    <h3>{{selectedPlayer?.name}}</h3>
-                </p-header>
-                <div>
-                    <img src="{{selectedPlayer?.imageUrl}}" width="60" height="60">
+                <div style="text-align: center; margin-top:0px">
+                    <h3 style="margin-top: 0px;">{{selectedPlayer?.name}}</h3>
                 </div>
-                <table class="inline-block table-padding">
-                    <tr>
-                        <th>Id:</th>
-                        <td>{{selectedPlayer?.id}}</td>
-                    </tr>
-                </table>
-                <table class="inline-block table-padding">
-                    <tr>
-                        <th>Skill:</th>
-                        <td>{{selectedPlayer?.skill}}</td>
-                    </tr>
-                </table>
-                <table class="inline-block table-padding">
-                    <tr>
-                        <th>Project:</th>
-                        <td>{{selectedPlayer?.project}}</td>
-                    </tr>
-                </table>
-                <div class="form-group">
-                    <label for="usr">Points:</label>
-                    <input type="number" name="price" [(ngModel)]="selectedPlayer.price" class="form-control" id="usr">
-                </div>
-                <div>
-                    <p-dropdown [options]="teams" name="teamselection" [appendTo]="'body'" [(ngModel)]="selectedTeam" [placeholder]="'Select Team'"></p-dropdown>
-                </div>
-                <p-button label="Save" (click)="assignPlayerToTeam()"></p-button>
-                <div style="margin-top: 10px;">
-                    <!-- <button type="button" class="btn btn-success" (onclick)="assignPlayerToTeam()">Success</button> -->
-
+                <div style="text-align: center">
+                    <div style="float: left; margin-right: 10%">
+                        <img src="{{selectedPlayer?.imageUrl}}" width="150" height="150">
+                    </div>
+                    <table class="inline-block table-padding">
+                        <tr>
+                            <th style="width: 60px;">Id:</th>
+                            <td>{{selectedPlayer?.id}}</td>
+                        </tr>
+                    </table>
+                    <table class="inline-block table-padding" cellspacing="10">
+                        <tr>
+                            <th style="width: 60px;">Skill:</th>
+                            <td>{{selectedPlayer?.skill}}</td>
+                        </tr>
+                    </table>
+                    <table class="inline-block table-padding">
+                        <tr>
+                            <th style="width: 60px;">Project:</th>
+                            <td>{{selectedPlayer?.project}}</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table class="inline-block table-padding">
+                        <tr>
+                            <th style="width: 60px;">Points:</th>
+                            <td><input type="number" class="input-point" id="usr"></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table class="inline-block table-padding">
+                        <tr>
+                            <th style="width: 60px;">Team:</th>
+                            <td>
+                                <p-dropdown [options]="teams" name="teamselection" [appendTo]="'body'" [(ngModel)]="selectedTeam" [placeholder]="'Select Team'"></p-dropdown>
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="margin-top: 10px;">
+                        <!-- <button type="button" class="btn btn-success">Success</button> -->
+                        <p-button label="Save" (click)="assignPlayerToTeam()"></p-button>
+                    </div>
                 </div>
             </p-card>
         </div>
     </div>
-    <!-- <div class="bidding-bottom-section">
+    <div class="bidding-bottom-section">
         <div class="ui-g-3">
             <ng-template let-royal let-last="last" ngFor [ngForOf]="royals" let-i="index">
                 <div class="ui-g-12 list">
@@ -94,5 +104,5 @@
                 </div>
             </ng-template>
         </div>
-    </div> -->
+    </div>
 </div>
