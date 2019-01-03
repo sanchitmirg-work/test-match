@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PlayersService } from '../../services/players.service';
 import { OEPLMember } from '../../modals/OEPLMember';
 import { ViewEncapsulation } from '@angular/core';
+import { SelectItem } from 'primeng/api';
 
 @Component({
   selector: 'app-bidding',
@@ -12,6 +13,9 @@ import { ViewEncapsulation } from '@angular/core';
 export class BiddingComponent implements OnInit {
 
   players: OEPLMember[] = [];
+  teams: SelectItem[];
+  selectedTeam: any;
+  selectedPlayer: OEPLMember = new OEPLMember();
   constructor(
     private service: PlayersService
   ) { }
@@ -23,6 +27,17 @@ export class BiddingComponent implements OnInit {
           this.players = response;
         }
       });
+
+    this.teams = [
+      { label: 'Royals', value: 'Royals' },
+      { label: 'Riders', value: 'Riders' },
+      { label: 'Rangers', value: 'Rangers' },
+      { label: 'Rovers', value: 'Rovers' }
+    ];
+  }
+
+  onPlayerSelection(player) {
+    this.selectedPlayer = player;
   }
 
 }

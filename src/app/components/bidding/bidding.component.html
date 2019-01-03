@@ -1,15 +1,67 @@
 <div class="header">
     <div class="bidding-top-section">
         <!-- [listStyle]="{'height':'250px', 'width':'100px'}" -->
-        <p-orderList [value]="players" [styleClass]="'bidding-list'" header="Players" filter="filter" filterBy="name" filterPlaceholder="Filter by name"
-            dragdrop="true" dragdropScope="cars">
-            <ng-template let-player pTemplate="item">
-                <div class="ui-helper-clearfix">
-                    <img src="{{player.imageUrl}}" style="display:inline-block;margin:2px 0 2px 2px" width="48">
-                    <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{player.name}} - {{player.project}} - {{player.skill}}</div>
+        <div class="ui-g-6">
+            <p-orderList [value]="players" [styleClass]="'bidding-list'" header="Players" filter="filter" filterBy="id" filterPlaceholder="Filter by Id"
+                dragdrop="true" dragdropScope="cars">
+                <ng-template let-player pTemplate="item">
+                    <div class="ui-helper-clearfix" (click)="onPlayerSelection(player)">
+                        <img src="{{player.imageUrl}}" style="display:inline-block;margin:2px 0 2px 2px" width="48">
+                        <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{player.name}} - {{player.project}} - {{player.skill}}</div>
+                    </div>
+                </ng-template>
+            </p-orderList>
+        </div>
+        <div *ngIf="selectedPlayer.id" class="ui-g-6">
+            <p-card>
+                <p-header>
+                    <h3>{{selectedPlayer?.name}}</h3>
+                </p-header>
+                <div>
+                    <img src="{{selectedPlayer?.imageUrl}}" width="60" height="60">
                 </div>
-            </ng-template>
-        </p-orderList>
+                <table class="inline-block table-padding">
+                    <tr>
+                        <th>Id:</th>
+                        <td>{{selectedPlayer?.id}}</td>
+                    </tr>
+                </table>
+                <table class="inline-block table-padding">
+                    <tr>
+                        <th>Skill:</th>
+                        <td>{{selectedPlayer?.skill}}</td>
+                    </tr>
+                </table>
+                <table class="inline-block table-padding">
+                    <tr>
+                        <th>Project:</th>
+                        <td>{{selectedPlayer?.project}}</td>
+                    </tr>
+                </table>
+                <!-- <table class="inline-block table-padding">
+                    <tr>
+                        <th>Contract Id:</th>
+                        <td>{{CID}}</td>
+                    </tr>
+                </table>
+                <table class="inline-block table-padding">
+                    <tr>
+                        <th>Contract Id:</th>
+                        <td>{{CID}}</td>
+                    </tr>
+                </table> -->
+                <div class="form-group">
+                    <label for="usr">Points:</label>
+                    <input type="number" class="form-control" id="usr">
+                </div>
+                <div>
+                    <p-dropdown [options]="teams" name="teamselection" [appendTo]="'body'" [(ngModel)]="selectedTeam" [placeholder]="'Select Team'"></p-dropdown>
+                </div>
+                <div style="margin-top: 10px;">
+                    <button type="button" class="btn btn-success">Success</button>
+                </div>
+            </p-card>
+        </div>
     </div>
     <div class="bidding-bottom-section">
 
