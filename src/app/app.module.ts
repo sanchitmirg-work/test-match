@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { CalendarModule } from 'primeng/calendar';
 import { MainComponent } from './main/main.component';
 import { AlertModule } from 'ngx-bootstrap';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { AlertModule } from 'ngx-bootstrap';
     AppRoutingModule,
     FormsModule,
     CalendarModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
