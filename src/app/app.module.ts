@@ -1,27 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, forwardRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { CalendarModule } from 'primeng/calendar';
+import { CalendarModule, PanelModule, OrderListModule } from 'primeng/primeng';
+import { DataViewModule } from 'primeng/dataview';
 import { MainComponent } from './main/main.component';
 import { AlertModule } from 'ngx-bootstrap';
+import { PlayersComponent } from './components/players/players.component';
+import { BiddingComponent } from './components/bidding/bidding.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    PlayersComponent,
+    BiddingComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     CalendarModule,
+    DataViewModule,
+    PanelModule,
+    OrderListModule,
     AlertModule.forRoot()
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

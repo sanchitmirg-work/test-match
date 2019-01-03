@@ -1,0 +1,19 @@
+.bidding-top-section {
+    height: 50vh;
+    opacity: 0.8;
+    padding:30px;
+
+    .bidding-list {
+        height: 50vh;
+        width: 50vw;
+        .ui-orderlist-controls {
+            display: none;
+        }
+    }
+}
+
+.bidding-bottom-section {
+    height: 50vh;
+    opacity: 0.8;
+    padding:30px;
+}
