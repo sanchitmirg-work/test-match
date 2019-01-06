@@ -7,5 +7,6 @@ export const environment = {
     projectId: "oepl-7c7d6",
     storageBucket: "oepl-7c7d6.appspot.com",
     messagingSenderId: "663271111133"
-  }
+  },
+  url: 'https://182.156.206.197:9000/oepl/'
 };

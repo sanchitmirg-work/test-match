@@ -12,7 +12,7 @@ export const environment = {
     storageBucket: "oepl-7c7d6.appspot.com",
     messagingSenderId: "663271111133"
   },
-  url: 'http://172.16.5.149:9000/oepl/'
+  url: 'https://182.156.206.197:9000/oepl/'
 };
 
 /*

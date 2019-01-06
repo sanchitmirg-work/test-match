@@ -34,3 +34,11 @@
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     background-color: white;
 }
+
+.team-card{
+    background-color: #fff;
+    height: 42vh;
+    overflow-y: auto;
+    width: 20%;
+    display: inline-block;
+}

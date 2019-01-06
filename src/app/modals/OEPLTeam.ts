@@ -6,5 +6,5 @@ export class OEPLTeam {
     teamName: string;
     captain: OEPLMember = new OEPLMember();
     members: OEPLMember[] = [];
-    amount = 8000;
+    amount: number;
 }
